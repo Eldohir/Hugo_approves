@@ -23,6 +23,13 @@ class Article
     #[ORM\Column(length: 255)]
     private ?string $summary = null;
 
+    #[ORM\ManyToOne(inversedBy: 'articles')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Category $category = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $image = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -60,6 +67,30 @@ class Article
     public function setSummary(string $summary): self
     {
         $this->summary = $summary;
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }
