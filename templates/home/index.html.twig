@@ -1,10 +1,10 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Hugo approves</title>
-	</head>
-	<body>
-		<h1>Bienvenue sur Hugo approves</h1>
-	</body>
-</html>
+{% extends 'base.html.twig' %}
+
+{% block title %}Hugo approves
+{% endblock %}
+
+{% block body %}
+	<h1>{{ website }}</h1>
+
+	<img src="{{ asset('Hugo_approves\assets\images\Final_fantasy.jpg') }}" alt="FF"/>
+{% endblock %}
