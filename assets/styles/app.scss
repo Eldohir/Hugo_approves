@@ -1,6 +1,56 @@
 // the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
+
+[data-theme="light"] {
+    --gradient-one: #30cfd0;
+    --gradient-two: #330867;
+    --bg-color: #ffffff;
+    --links: #000000;
+}
+
+[data-theme="dark"] {
+    --gradient-one: rgba(245, 107, 244, 0.79);
+    --gradient-two: #efad05;
+    --bg-color: #21232f;
+    --links: #FFFFFF;
+}
+
+body {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    background-color: var(--bg-color);
+}
+
+.container {
+    margin: auto;
+    padding: 100px 0;
+}
+
+.container h1 {
+    font-size: 72px;
+    background: linear-gradient(to right,
+            var(--gradient-one) 0%,
+            var(--gradient-two) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.container ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.container ul li {
+    color: var(--links);
+    cursor: pointer;
+}
+
 body {
     background-color: rgb(244, 248, 244);
 }
