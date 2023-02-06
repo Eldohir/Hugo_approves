@@ -9,7 +9,6 @@
 	</div>
 	<div class="container">
 		<div class="row justify-content-around">
-
 			{% for article in articles %}
 				<div class="card col-4 shadow-lg m-2" style="width: 18rem;">
 					<img class="img card-img-top img-center" src="{{article.image}}" alt="Card image cap">
@@ -18,9 +17,13 @@
 						<p>{{ article.date }}</p>
 					</div>
 				</div>
-			{% else %}
-				Aucune catégorie trouvée.
 			{% endfor %}
 		</div>
+		<button type="button" class="btn btn-success btn-floating btn-lg" id="btn-back-to-top"></button>
 	</div>
-</div>{% endblock %}
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent()}}
+	{{ encore_entry_script_tags('app') }}
+{% endblock %}
